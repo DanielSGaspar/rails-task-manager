@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>My Tasksrails</h1>
+
+  <ul class="list-group">
+    <% @tasks.each do |task|%>
+      <li class="list-group-item">
+      <%if task.completed%>
+        <i class="fa-regular fa-square"></i>
+      <%else%>
+        <i class="fa-regular fa-square-check"></i>
+      <%end%>
+      </i><%= link_to "#{task.completed} #{task.title}", task_path(task)%></li>
+    <%end%>
+  </ul>
+    <%=link_to "Add new task", new_task_path, class:"btn btn-primary mt-2"%>
+</div>
